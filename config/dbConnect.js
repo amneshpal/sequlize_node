@@ -9,7 +9,6 @@ const sequelize = new Sequelize('LearnSequelize', 'root', 'Amnesh@123', {
 
 const dbConnection = async () => {
 
-
     try {
         await sequelize.authenticate();
         console.log('Connection has been established successfully.');

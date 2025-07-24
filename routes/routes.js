@@ -3,5 +3,5 @@ const router = express.Router();
 const {insert} = require('../controller/userController')
 
 
-router.post('/register', insert)
+router.get('/register', insert)
 module.exports = {router}
