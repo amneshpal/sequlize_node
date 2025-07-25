@@ -15,5 +15,14 @@
     "express": "^5.1.0",
     "mysql2": "^3.14.2",
     "sequelize": "^6.37.7"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amneshpal/sequlize_node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/amneshpal/sequlize_node/issues"
+  },
+  "homepage": "https://github.com/amneshpal/sequlize_node#readme"
 }
