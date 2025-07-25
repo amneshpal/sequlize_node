@@ -146,16 +146,23 @@ const testFunction = async (req, res) => {
 
 
 
-const [db] =  await userDetails.findOrCreate({
-  where:{
-     name:"khushi"
-  },
-  defaults:{
-    name:'xyz',
-    favoriteColor: 'black'
-  }
-});
-return res.send(db)
+// const [db] =  await userDetails.findOrCreate({
+//   where:{
+//      name:"khushi"
+//   },
+//   defaults:{
+//     name:'xyz',
+//     favoriteColor: 'black'
+//   }
+// });
+// return res.send(db)
+
+
+
+
+
+
+
 
 
 }
