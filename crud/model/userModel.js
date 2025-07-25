@@ -7,7 +7,7 @@ const UserModel = sequelize.define('user', {
     email: DataTypes.STRING,
     password: DataTypes.STRING,
     age: DataTypes.INTEGER,
-    mobileNumber: DataTypes.INTEGER,
+    mobileNumber: DataTypes.STRING,
     isActive: {
         type: DataTypes.BOOLEAN,
     }
