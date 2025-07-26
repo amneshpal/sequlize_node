@@ -18,4 +18,4 @@ router.put('/update/:id',updateUser)
 router.delete('/deleteuser/:id',deleteUser)
 
 
-module.exports ={router}
+module.exports ={router} 

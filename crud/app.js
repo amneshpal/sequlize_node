@@ -8,7 +8,7 @@ app.use(express.json())
 
 app.use('/', router)
 
-UserModel.sync({force:false})
+// UserModel.sync({force:false})
 
 app.listen(4000, async () => {
     console.log('server is listen at port : 4000')
