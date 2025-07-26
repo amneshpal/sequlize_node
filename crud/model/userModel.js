@@ -10,11 +10,17 @@ const UserModel = sequelize.define('user', {
     mobileNumber: DataTypes.STRING,
     isActive: {
         type: DataTypes.BOOLEAN,
-    }
+    },
+      isDeleted: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: 0  // Default to 0 (not deleted)
+        }
 
 
 },{
-    freezeTableName:true
+    freezeTableName:true,
+      paranoid: true,
 })
 
 module.exports = UserModel

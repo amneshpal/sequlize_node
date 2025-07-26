@@ -77,4 +77,38 @@ try{
 }
 
 
-module.exports = { createUser, getUser, getUserById, updateUser, deleteUser };
+const softDelete = async (req, res) => {
+    try {
+        const user = await UserModel.findByPk(req.params.id);
+        if (!user) return res.status(404).json({ message: "User not found"
+            });
+         
+          user.isDeleted = 1;  // Mark the user as deleted
+        await user.save();   // Save the changes to the database
+        return res.status(200).json({ msg: 'User soft deleted' });    
+
+        }catch(error){
+            return res.status(500).json({ message: "Internal Server Error", error: error.messag})
+
+        }  
+    }
+
+
+    
+const restoresoftDelete = async (req, res) => {
+    try {
+        const user = await UserModel.findByPk(req.params.id);
+        if (!user ||user.isDeleted===0) return res.status(404).json({ message: "User not found"
+            });
+         
+          user.isDeleted = 0;  // Mark the user as deleted
+        await user.save();   // Save the changes to the database
+        return res.status(200).json({ msg: 'User restor',user });    
+
+        }catch(error){
+            return res.status(500).json({ message: "Internal Server Error", error: error.messag})
+
+        }  
+    }
+
+module.exports = { createUser, getUser, getUserById, updateUser, deleteUser,softDelete, restoresoftDelete };
